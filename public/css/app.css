@@ -1706,6 +1706,10 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
     grid-column: span 6 / span 6;
   }
 
+  .sm\:col-span-4 {
+    grid-column: span 4 / span 4;
+  }
+
   .sm\:-my-px {
     margin-top: -1px;
     margin-bottom: -1px;

@@ -1,18 +1,8 @@
 <x-app-layout>
-
-  @section('css')
-    <!--Regular Datatables CSS-->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
-
-    <!--Responsive Extension Datatables CSS-->
-    {{-- <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet"> --}}
-    
-  @endsection
-
   <x-slot name="header">
-    {{ __('Alumnos') }}
+    {{ __('Convenios') }}
   </x-slot>
-  
+    
   <x-slot name="slot">
     @if ($mensaje = Session::get('mensaje'))
       <div id="toast" class="absolute flex items-center w-full max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x divide-gray-200 rounded-lg shadow bottom-5 right-5 dark:text-gray-400 dark:divide-gray-700 space-x dark:bg-gray-800" role="alert" onclick="closeToast()">
@@ -31,41 +21,32 @@
       </div> --}}
     @endif
 
-    {{-- <div class="w-full flex justify-end mb-4">
-      <a href="{{route('alumnos.create')}}" class="btn btn-blue">Nuevo</a>
-    </div> --}}
+    <div class="w-full flex justify-end mb-4">
+      <a href="{{route('convenios.create')}}" class="btn btn-blue">Nuevo</a>
+    </div>
       {{-- <table id="alumnos" class="w-full text-sm text-left text-gray-500 dark:text-gray-400"> --}}
-    <table id="alumnos" class="w-full text-sm text-left text-gray-500 dark:text-gray-500">
+    <table id="convenios" class="w-full text-sm text-left text-gray-500 dark:text-gray-500">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-blue-900 dark:text-gray-200">
         <tr>
-          <th scope="col" class="px-6 py-3">Matrícula</th>
           <th scope="col" class="px-6 py-3">Nombre</th>
-          <th scope="col" class="px-6 py-3">Apellido Paterno</th>
-          <th scope="col" class="px-6 py-3">Apellido Materno</th>
-          <th scope="col" class="px-6 py-3">Carrera</th>
+          <th scope="col" class="px-6 py-3">Descripción</th>
         </tr>
       </thead>
       <tbody>
-        @forelse ($alumnos as $alumno)
-          <tr class="bg-white hover:bg-gray-200 border-b" onclick="window.location='{{route('alumnos.edit', $alumno->id)}}'" style="cursor: pointer">
-            <td class="px-6 py-4">{{$alumno->matricula}}</td>
-            <td class="px-6 py-4">{{$alumno->nombre}}</td>
-            <td class="px-6 py-4">{{$alumno->apellido_paterno}}</td>
-            <td class="px-6 py-4">{{$alumno->apellido_materno}}</td>
-            <td class="px-6 py-4">{{$alumno->carrera}}</td>
+        @forelse ($convenios as $convenio)
+          <tr class="bg-white hover:bg-gray-200 border-b" onclick="window.location='{{route('convenios.edit', $convenio)}}'" style="cursor: pointer">
+            <td class="px-6 py-4">{{$convenio->nombre}}</td>
+            <td class="px-6 py-4">{{$convenio->descripcion}}</td>
           </tr>
         @empty
         @endforelse
       </tbody>
     </table>
-
-    
   </x-slot>
-
   @section('js')
     <script>
       $(document).ready(function () {
-        $('#alumnos').DataTable({
+        $('#convenios').DataTable({
           lengthChange: false,
         });
       });

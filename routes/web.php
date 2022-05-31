@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Residencia\ResidenciaController;
 use App\Http\Controllers\Admin\Residencia\ServicioController;
 use App\Http\Controllers\Admin\Vinculacion\AlcanceController;
 use App\Http\Controllers\Admin\Vinculacion\AreaController;
+use App\Http\Controllers\Admin\Vinculacion\ConvenioController;
 use App\Http\Controllers\Admin\Vinculacion\GiroController;
 use App\Http\Controllers\Admin\Vinculacion\ModalidadController;
 use App\Http\Controllers\Admin\Vinculacion\ObjetivoController;
@@ -32,6 +33,7 @@ Route::middleware(['auth'])->group( function () {
   Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
   Route::resource('servicios', ServicioController::class);
   Route::resource('residencias', ResidenciaController::class);
+  Route::resource('convenios', ConvenioController::class);
   Route::resource('alumnos', AlumnoController::class);
   Route::resource('alcances', AlcanceController::class);
   Route::resource('giros', GiroController::class);
