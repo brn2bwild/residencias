@@ -4,7 +4,7 @@
   </x-slot>
     
   <x-slot name="slot">
-      <h1>relleno</h1>
+      <h1>Estamos trabajando para que puedas hacer mejor tu trabajo</h1>
   </x-slot>
   
 </x-app-layout>

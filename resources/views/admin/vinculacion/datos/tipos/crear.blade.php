@@ -1,15 +1,15 @@
 <x-app-layout>
   <x-slot name="header">
-      {{ __('Crear Área') }}
+      {{ __('Crear Tipo de Asentamiento') }}
   </x-slot>
     
   <x-slot name="slot">
-    <form action="{{route('areas.store')}}" method="POST">
+    <form action="{{route('tipos.store')}}" method="POST">
       {{ csrf_field() }}
       <div class="px-4 py-5 bg-white sm:p-6">
         <div class="grid grid-cols-5 gap-4">
           <div class="col-span-6 sm:col-span-2">
-            <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre del área</label>
+            <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre del tipo</label>
             <input type="text" name="nombre" id="nombre" autocomplete="nombre" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('nombre') border-red-500 @enderror">
             @error('nombre')
               <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
@@ -19,7 +19,7 @@
           </div>
 
           <div class="col-span-6 sm:col-span-3">
-            <label for="descripcion" class="block text-sm font-medium text-gray-700">Descripción del área</label>
+            <label for="descripcion" class="block text-sm font-medium text-gray-700">Descripción del tipo</label>
             <input type="text" name="descripcion" id="descripcion" autocomplete="descripcion" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('descripcion') border-red-500 @enderror">
             @error('descripcion')
               <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">

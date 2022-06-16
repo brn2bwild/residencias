@@ -30,13 +30,17 @@
         <tr>
           <th scope="col" class="px-6 py-3">Nombre</th>
           <th scope="col" class="px-6 py-3">Matrícula</th>
+          <th scope="col" class="px-6 py-3">Carrera</th>
+          <th scope="col" class="px-6 py-3">Sitación</th>
         </tr>
       </thead>
       <tbody>
         @forelse ($servicios as $servicio)
           <tr class="bg-white hover:bg-gray-200 border-b" onclick="window.location='{{route('servicios.edit', $servicio)}}'" style="cursor: pointer">
-            <td class="px-6 py-4">{{$servicio->nombre}}</td>
-            <td class="px-6 py-4">{{$servicio->matricula}}</td>
+            <td class="px-6 py-4">{{$servicio->alumno->nombres.' '.$servicio->alumno->apellido_paterno.' '.$servicio->alumno->apellido_materno}}</td>
+            <td class="px-6 py-4">{{$servicio->alumno->matricula}}</td>
+            <td class="px-6 py-4">{{$servicio->alumno->carrera->nombre}}</td>
+            <td class="px-6 py-4">En proceso</td>
           </tr>
         @empty
         @endforelse
@@ -48,6 +52,9 @@
       $(document).ready(function () {
         $('#servicios').DataTable({
           lengthChange: false,
+          "language": {
+            "url": "{{ Storage::url('datatables-es.json'); }}"
+          }
         });
       });
 

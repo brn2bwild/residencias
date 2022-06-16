@@ -10,12 +10,17 @@ class Alumno extends Model
     use HasFactory;
     
     protected $fillable = [
-      'nombre',
+      'nombres',
       'apellido_paterno',
       'apellido_materno',
       'matricula',
-      'carrera',
-      'grupo',
-      'semestre',
+      'id_carrera',
+      'email',
+      'numero_tel',
+      'sexo',
     ];
+
+    public function carrera() {
+      return $this->belongsTo(Carrera::class, 'id_carrera');
+    }
 }

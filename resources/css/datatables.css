@@ -43,7 +43,7 @@ table.dataTable.display tbody tr:hover {
 
 /*Pagination Buttons - Current selected */
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
-  color: white;
+  color: white !important;
   /*text-white*/
   /* box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06); */
   /*shadow*/
@@ -59,7 +59,7 @@ table.dataTable.display tbody tr:hover {
 
 /*Pagination Buttons - Hover */
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-  color: #fff ;
+  color: #fff !important;
   /*text-white*/
   /* box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06); */
   /*shadow*/
@@ -68,6 +68,8 @@ table.dataTable.display tbody tr:hover {
   border-radius: .25rem;
   /*rounded*/
   background: #1e40af !important;
+
+  /* background: #fff !important; */
   /*bg-indigo-500*/
   border: 1px solid transparent;
   /*border border-transparent*/

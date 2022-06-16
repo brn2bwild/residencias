@@ -48,6 +48,9 @@
       $(document).ready(function () {
         $('#convenios').DataTable({
           lengthChange: false,
+          "language": {
+            "url": "{{ Storage::url('datatables-es.json'); }}"
+          }
         });
       });
 

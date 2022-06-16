@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('objetivos_controller');
+        Schema::dropIfExists('objetivos');
     }
 };

@@ -8,7 +8,7 @@
       @csrf
       @method('PATCH')
       <div class="px-4 py-5 bg-white sm:p-6">
-        <div class="grid grid-cols-6 gap-4">
+        {{-- <div class="grid grid-cols-6 gap-4">
           <div class="col-span-6 sm:col-span-2">
             <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre del alumno</label>
             <input type="text" name="nombre" id="nombre" autocomplete="nombre" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('nombre') border-red-500 @enderror" value="{{$residencia->nombre}}">
@@ -49,7 +49,7 @@
             @enderror
           </div>
 
-        </div>
+        </div> --}}
       </div>
       <div class="px-4 py-3 text-right sm:px-6 flex justify-between">
         <button type="submit" class="btn btn-blue">Actualizar</button>

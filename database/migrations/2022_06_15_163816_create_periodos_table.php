@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('residencias', function (Blueprint $table) {
+        Schema::create('periodos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('apellido_paterno');
-            $table->string('apellido_materno');
-            $table->string('matricula');
+            $table->date('fecha_inicio');
+            $table->date('fecha_aceptacion');
+            $table->date('fecha_documentacion');
+            $table->date('fecha_termino');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('residencias');
+        Schema::dropIfExists('periodos');
     }
 };

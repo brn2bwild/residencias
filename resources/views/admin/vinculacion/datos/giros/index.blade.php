@@ -39,6 +39,9 @@
       $(document).ready(function () {
         $('#giros').DataTable({
           lengthChange: false,
+          "language": {
+            "url": "{{ Storage::url('datatables-es.json'); }}"
+          }
         });
       });
 

@@ -39,6 +39,9 @@
       $(document).ready(function () {
         $('#sectores').DataTable({
           lengthChange: false,
+          "language": {
+            "url": "{{ Storage::url('datatables-es.json'); }}"
+          }
         });
       });
 

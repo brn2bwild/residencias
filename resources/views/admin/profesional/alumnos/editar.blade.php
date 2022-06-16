@@ -26,8 +26,8 @@
       <div class="px-4 py-5 bg-white sm:p-6">
         <div class="grid grid-cols-6 gap-6">
           <div class="col-span-6 sm:col-span-2">
-            <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
-            <input type="text" name="nombre" id="nombre" autocomplete="nombre_alumno" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="{{$alumno->nombre}}" style="text-transform: uppercase">
+            <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre del alumno</label>
+            <input type="text" name="nombre" id="nombre" autocomplete="nombre" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('nombre') border-red-500 @enderror" value="{{$alumno->nombres}}">
             @error('nombre')
               <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
                 {{$errors->first('nombre')}}
@@ -36,8 +36,8 @@
           </div>
 
           <div class="col-span-6 sm:col-span-2">
-            <label for="apellido_paterno" class="block text-sm font-medium text-gray-700">Apellido Paterno</label>
-            <input type="text" name="apellido_paterno" id="apellido_paterno" autocomplete="apellido_paterno" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="{{$alumno->apellido_paterno}}" style="text-transform: uppercase">
+            <label for="apellido_paterno" class="block text-sm font-medium text-gray-700">Apellido paterno</label>
+            <input type="text" name="apellido_paterno" id="apellido_paterno" autocomplete="apellido_paterno" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('apellido_paterno') border-red-500 @enderror" value="{{$alumno->apellido_paterno}}">
             @error('apellido_paterno')
               <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
                 {{$errors->first('apellido_paterno')}}
@@ -46,8 +46,8 @@
           </div>
 
           <div class="col-span-6 sm:col-span-2">
-            <label for="apellido_materno" class="block text-sm font-medium text-gray-700">Apellido Materno</label>
-            <input type="text" name="apellido_materno" id="apellido_materno" autocomplete="apellido_materno" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="{{$alumno->apellido_materno}}" style="text-transform: uppercase">
+            <label for="apellido_materno" class="block text-sm font-medium text-gray-700">Apellido materno</label>
+            <input type="text" name="apellido_materno" id="apellido_materno" autocomplete="apellido_materno" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('apellido_materno') border-red-500 @enderror" value="{{$alumno->apellido_materno}}">
             @error('apellido_materno')
               <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
                 {{$errors->first('apellido_materno')}}
@@ -56,8 +56,8 @@
           </div>
 
           <div class="col-span-6 sm:col-span-2">
-            <label for="matricula" class="block text-sm font-medium text-gray-700">Matricula</label>
-            <input type="text" name="matricula" id="matricula" autocomplete="matricula" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="{{$alumno->matricula}}" style="text-transform: uppercase">
+            <label for="matricula" class="block text-sm font-medium text-gray-700">Matrícula</label>
+            <input type="text" name="matricula" id="matricula" autocomplete="matricula" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('matricula') border-red-500 @enderror" value="{{$alumno->matricula}}">
             @error('matricula')
               <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
                 {{$errors->first('matricula')}}
@@ -66,36 +66,12 @@
           </div>
 
           <div class="col-span-6 sm:col-span-2">
-            <label for="semestre" class="block text-sm font-medium text-gray-700">Semestre</label>
-            <input type="number" name="semestre" id="semestre" autocomplete="semestre" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="{{$alumno->semestre}}">
-            @error('semestre')
-              <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
-                {{$errors->first('semestre')}}
-              </span>
-            @enderror
-          </div>
-
-          <div class="col-span-6 sm:col-span-2">
-            <label for="grupo" class="block text-sm font-medium text-gray-700">Grupo</label>
-            <input type="text" name="grupo" id="grupo" autocomplete="grupo" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="{{$alumno->grupo}}" style="text-transform: uppercase">
-            @error('grupo')
-              <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
-                {{$errors->first('grupo')}}
-              </span>
-            @enderror
-          </div>
-
-          <div class="col-span-6 sm:col-span-2">
             <label for="carrera" class="block text-sm font-medium text-gray-700">Carrera</label>
-            <select id="carrera" name="carrera" autocomplete="carrera-alumno" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm">
+            <select id="carrera" name="carrera" autocomplete="carrera-alumno" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm @error('matricula') border-red-500 @enderror">
               <option selected>Seleccione una carrera</option>
-              <option value="Ing. Informática" @selected('Ing. Informática' == $alumno->carrera)>Ing. Informática</option>
-              <option value="Ing. Electromecánica" @selected('Ing. Electromecánica' == $alumno->carrera)>Ing. Electromecánica</option>
-              <option value="Ing. Administración" @selected('Ing. Administración' == $alumno->carrera)>Ing. Administración</option>
-              <option value="Ing. Bioquímica" @selected('Ing. Bioquímica' == $alumno->carrera)>Ing. Bioquímica</option>
-              <option value="Ing. Industrial" @selected('Ing. Industrial' == $alumno->carrera)>Ing. Industrial</option>
-              <option value="Ing. Energías Renovables" @selected('Ing. Energías Renovables' == $alumno->carrera)>Ing. Energías Renovables</option>
-              <option value="Ing. Agronomía" @selected('Ing. Agronomía' == $alumno->carrera)>Ing. Agronomía</option>
+              @foreach ($carreras as $carrera)
+                <option value="{{$carrera->nombre}}" @selected(old('carrera',$alumno->carrera->nombre) == $carrera->nombre)>{{$carrera->nombre}}</option>
+              @endforeach
             </select>
             @error('carrera')
               <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
@@ -104,39 +80,39 @@
             @enderror
           </div>
 
-          <div class="col-span-6 sm:col-span-3">
-            <label for="email-address" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
-            <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="">
+          <div class="col-span-6 sm:col-span-2">
+            <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+            <input type="email" name="email" id="email" autocomplete="email" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('email') border-red-500 @enderror" value="{{$alumno->email}}">
+            @error('email')
+              <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+                {{$errors->first('email')}}
+              </span>
+            @enderror
           </div>
 
-          {{-- <div class="col-span-6 sm:col-span-3">
-            <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
-            <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm">
-              <option>United States</option>
-              <option>Canada</option>
-              <option>Mexico</option>
+          <div class="col-span-6 sm:col-span-2">
+            <label for="numero_tel" class="block text-sm font-medium text-gray-700">Número de teléfono</label>
+            <input type="text" name="numero_tel" id="numero_tel" autocomplete="numero_tel" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('numero_tel') border-red-500 @enderror" value="{{$alumno->numero_tel}}">
+            @error('numero_tel')
+              <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+                {{$errors->first('numero_tel')}}
+              </span>
+            @enderror
+          </div>
+
+          <div class="col-span-6 sm:col-span-2">
+            <label for="sexo" class="block text-sm font-medium text-gray-700">Sexo</label>
+            <select id="sexo" name="sexo" autocomplete="sexo" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm @error('sexo') border-red-500 @enderror" value="{{old('sexo')}}">
+              <option value="" selected>Seleccione un sexo</option>
+              <option value="M" @selected(old('sexo', $alumno->sexo) == 'M')>Mujer</option>
+              <option value="H" @selected(old('sexo', $alumno->sexo) == 'H')>Hombre</option>
             </select>
-          </div> --}}
-
-          {{-- <div class="col-span-6">
-            <label for="street-address" class="block text-sm font-medium text-gray-700">Street address</label>
-            <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            @error('sexo')
+              <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+                {{$errors->first('sexo')}}
+              </span>
+            @enderror
           </div>
-
-          <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-            <label for="city" class="block text-sm font-medium text-gray-700">City</label>
-            <input type="text" name="city" id="city" autocomplete="address-level2" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-          </div>
-
-          <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-            <label for="region" class="block text-sm font-medium text-gray-700">State / Province</label>
-            <input type="text" name="region" id="region" autocomplete="address-level1" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-          </div>
-
-          <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-            <label for="postal-code" class="block text-sm font-medium text-gray-700">ZIP / Postal code</label>
-            <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-          </div> --}}
         </div>
       </div>
       <div class="px-4 py-3 text-right sm:px-6 flex justify-between">
@@ -153,11 +129,11 @@
   </x-slot>
   @section('js')
     <script>
-      $(document).ready(function () {
-        $('#alumnos').DataTable({
-          lengthChange: false,
-        });
-      });
+      // $(document).ready(function () {
+      //   $('#alumnos').DataTable({
+          
+      //   });
+      // });
 
       function closeToast() {
         const toast = document.querySelector('#toast');

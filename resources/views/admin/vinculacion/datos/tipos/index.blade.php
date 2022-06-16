@@ -1,6 +1,6 @@
 <x-app-layout>
   <x-slot name="header">
-    {{ __('Tipos') }}
+    {{ __('Tipos de Asentamiento') }}
   </x-slot>
     
   <x-slot name="slot">
@@ -39,6 +39,9 @@
       $(document).ready(function () {
         $('#tipos').DataTable({
           lengthChange: false,
+          "language": {
+            "url": "{{ Storage::url('datatables-es.json'); }}"
+          }
         });
       });
 

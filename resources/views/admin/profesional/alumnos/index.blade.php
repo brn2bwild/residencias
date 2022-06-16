@@ -40,19 +40,17 @@
         <tr>
           <th scope="col" class="px-6 py-3">Matrícula</th>
           <th scope="col" class="px-6 py-3">Nombre</th>
-          <th scope="col" class="px-6 py-3">Apellido Paterno</th>
-          <th scope="col" class="px-6 py-3">Apellido Materno</th>
           <th scope="col" class="px-6 py-3">Carrera</th>
+          <th scope="col" class="px-6 py-3">Correo electrónico</th>
         </tr>
       </thead>
       <tbody>
         @forelse ($alumnos as $alumno)
           <tr class="bg-white hover:bg-gray-200 border-b" onclick="window.location='{{route('alumnos.edit', $alumno->id)}}'" style="cursor: pointer">
             <td class="px-6 py-4">{{$alumno->matricula}}</td>
-            <td class="px-6 py-4">{{$alumno->nombre}}</td>
-            <td class="px-6 py-4">{{$alumno->apellido_paterno}}</td>
-            <td class="px-6 py-4">{{$alumno->apellido_materno}}</td>
-            <td class="px-6 py-4">{{$alumno->carrera}}</td>
+            <td class="px-6 py-4">{{$alumno->nombre.' '.$alumno->apellido_paterno.' '.$alumno->apellido_materno}}</td>
+            <td class="px-6 py-4">{{$alumno->carrera->nombre}}</td>
+            <td class="px-6 py-4">{{$alumno->email}}</td>
           </tr>
         @empty
         @endforelse
@@ -67,6 +65,9 @@
       $(document).ready(function () {
         $('#alumnos').DataTable({
           lengthChange: false,
+          "language": {
+            "url" : "{{ Storage::url('datatables-es.json'); }}"
+          },
         });
       });
 

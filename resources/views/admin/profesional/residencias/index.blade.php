@@ -48,6 +48,9 @@
       $(document).ready(function () {
         $('#residencias').DataTable({
           lengthChange: false,
+          "language": {
+            "url": "{{ Storage::url('datatables-es.json'); }}"
+          }
         });
       });
 
